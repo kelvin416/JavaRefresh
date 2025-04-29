@@ -17,6 +17,22 @@ class RelationalOperators {
             System.out.println("a is less than b");
         }
 
+        if(a > b){
+            System.out.println("a is more than b");
+        }
+
+        if(a == b){
+            System.out.println("a is equals to b");
+        }
+
+        if(a <= b){
+            System.out.println("a is less or equal to b");
+        }
+
+        if (a >= b){
+            System.out.println("a is greater or equal to b");
+        }
+
         // write your code below
 
     }
