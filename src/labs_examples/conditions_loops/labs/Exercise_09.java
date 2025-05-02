@@ -8,4 +8,17 @@ package labs_examples.conditions_loops.labs;
  */
 
 public class Exercise_09 {
+    public static void main(String[] args) {
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("Checking number: " + i);
+
+            if (i == 7) {
+                System.out.println("Number 7 found! Exiting the loop.");
+                break;
+            }
+        }
+
+        System.out.println("Loop has ended.");
+    }
 }

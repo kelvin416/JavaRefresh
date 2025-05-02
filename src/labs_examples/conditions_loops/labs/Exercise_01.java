@@ -28,13 +28,12 @@ public class Exercise_01 {
         while (number <= 1000000000){
             if (number % 2 == 1){
                 System.out.println(number + " is an odd number.");
-                return;
+                break;
             } else if (number % 2 == 0){
                 System.out.println(number + " is an even number.");
-                return;
+                break;
             } else {
                 System.out.println("Enter a number between 1 and 1000000000");
-                return;
             }
         }
     }
