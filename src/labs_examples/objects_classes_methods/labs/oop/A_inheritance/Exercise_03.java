@@ -3,7 +3,7 @@ package labs_examples.objects_classes_methods.labs.oop.A_inheritance;
 /**
  * Why does the output print in the order it does?
  *
- * You answer:The super constructor is invoked and printed first then the other subclasses.
+ * You answer:The super constructor is invoked and printed first then the other subclasses..
  *
  */
 
