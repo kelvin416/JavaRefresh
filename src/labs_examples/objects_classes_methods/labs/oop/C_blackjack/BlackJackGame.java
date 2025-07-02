@@ -23,7 +23,7 @@ public class BlackJackGame extends Game {
             
             printAsciiArt();
 
-            handleBets();
+//            handleBets();
         } while (true);
     }
 
