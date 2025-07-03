@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * Created by ryandesmond - https://codingnomads.co
  */
-public class BufferedByteStream {
+public class  BufferedByteStream {
 
     public static void main(String[] args) {
 
