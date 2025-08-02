@@ -23,3 +23,31 @@ package labs_examples.lambdas.labs;
  *
  *
  */
+
+@FunctionalInterface
+interface Cats{
+    public void catName();
+}
+
+@FunctionalInterface
+interface SameType{
+    public int number(int a);
+}
+
+class Controller {
+    public static void main(String[] args) {
+
+        //using lambda expression
+        Cats cats1 = () -> {
+            System.out.println("This cat's name is Ponny.");
+        };
+
+        //using anonymous inner class
+        Cats cats2 = new Cats() {
+            @Override
+            public void catName() {
+                System.out.println("This cat's name is Llyod.");
+            }
+        };
+    }
+}

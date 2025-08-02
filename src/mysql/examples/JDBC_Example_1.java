@@ -19,7 +19,7 @@ public class JDBC_Example_1 {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             String connectionString = "jdbc:mysql://localhost/college?"
-                    + "user=<YOUR_MYSQL_USERNAME>&password=<YOUR_MYSQL_PASSWORD>"
+                    + "user=root&password=CodingNomads@2025"
                     + "&useSSL=false&allowPublicKeyRetrieval=true";
 
             // Setup the connection with the DB
