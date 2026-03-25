@@ -9,3 +9,23 @@ package labs_examples.datastructures.linkedlist.labs;
  *      LinkedList class for inspiration. Your new LinkedList class should ONLY allow users
  *      to add and remove elements from the front of the list AND the end of the list.
  */
+
+class MyNode<T> {
+
+    T data;
+
+    MyNode<T> next;
+
+    public MyNode(T data){
+        this.data = data;
+        this.next = null;
+    }
+
+//    we have to have an overloaded constructor
+    public MyNode(T data, MyNode myNode){
+        this.data = data;
+        this.next = myNode;
+    }
+}
+
+

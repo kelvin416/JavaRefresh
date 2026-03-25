@@ -19,7 +19,23 @@ public class Exercise_07 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Type in a word which has a single or multiple vowels: ");
-        String str = scanner.nextLine();
+        String word = scanner.nextLine();
+
+        int i = 0;
+
+        while (i < word.length()){
+            char letter = word.charAt(i);
+
+            if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u'
+                || letter == 'A' || letter == 'E' || letter == 'I' || letter == 'O' || letter == 'U'){
+                System.out.println("The word is: " + word);
+                System.out.println("First vowel is: " + letter);
+                break;
+            }
+
+            i++;
+        }
+
 
 
 

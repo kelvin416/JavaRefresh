@@ -18,22 +18,21 @@ public class Exercise_01 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int sum = 0;
-
+        double avg = 0;
+        System.out.println("Enter 10 random numbers: ");
         int[] numbers = new int[10];
-        System.out.println("Enter 10 numbers: ");
 
         for (int i = 0; i < numbers.length; i++){
-            System.out.println("Number " + (i + 1) + ": ");
-        }
-
-        for (int i = 0; i < numbers.length; i++){
+            System.out.print("Number " + (1 + i) + ": ");
+            numbers[i] = scanner.nextInt();
             sum += numbers[i];
         }
 
-        int avg = sum / numbers.length;
+        avg = sum / numbers.length;
 
-        System.out.println("\n Sum of the numbers: " + sum);
-        System.out.println("\n Avg of the numbers: " + avg);
+        System.out.println("Sum of the numbers is: " + sum);
+        System.out.println("Average of the numbers is: " + avg);
+
     }
 
 }

@@ -10,12 +10,13 @@ package labs_examples.conditions_loops.labs;
 public class Exercise_10 {
     public static void main(String[] args) {
 
+        System.out.println("This will print out only odd numbers as follows:");
         for (int i = 1; i <= 10; i++) {
             if (i % 2 == 0){
                 continue;
             }
 
-            System.out.println("The odds number is: " + i);
+            System.out.println(i);
         }
     }
 }

@@ -10,9 +10,9 @@ package labs_examples.conditions_loops.labs;
 public class Exercise_04 {
 
     public static void main(String[] args) {
-        for (int num = 1; num <= 100; num++){
-            if (num % 2 == 0){
-                System.out.println(num);
+        for (int i = 1; i <= 100; i++){
+            if (i % 2 == 0){
+                System.out.println("Num is: " + i);
             }
         }
     }

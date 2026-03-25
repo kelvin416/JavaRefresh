@@ -51,5 +51,7 @@ public class Exercise_02 {
             }
         }
 
+        System.out.println("Number is greater than 7.");
+
     }
 }

@@ -1,44 +1,25 @@
 package labs_examples.objects_classes_methods.labs.objects;
 
 class Airplane {
-    Wheels wheels;
-    EngineAssembly engineAssembly;
-    Cockpit cockpit;
-    Airline airline;
-    private double fuelCapacity;
-    private int currentFuelLevel;
 
-    public Airplane(Wheels wheels, EngineAssembly engineAssembly, Cockpit cockpit, Airline airline, double fuelCapacity, int currentFuelLevel) {
-        this.wheels = wheels;
-        this.engineAssembly = engineAssembly;
-        this.cockpit = cockpit;
+    Airline airline;
+    Cockpit cockpit;
+    Wheels wheels;
+    private boolean isLegal;
+    private double noOfPassengers;
+    private double fuelCapacity;
+    private double currentFuelLevel;
+
+    public Airplane(Airline airline, Cockpit cockpit,
+                    Wheels wheels, boolean isLegal,
+                    double noOfPassengers, double fuelCapacity, double currentFuelLevel) {
         this.airline = airline;
+        this.cockpit = cockpit;
+        this.wheels = wheels;
+        this.isLegal = isLegal;
+        this.noOfPassengers = noOfPassengers;
         this.fuelCapacity = fuelCapacity;
         this.currentFuelLevel = currentFuelLevel;
-    }
-
-    public Wheels getWheels() {
-        return wheels;
-    }
-
-    public void setWheels(Wheels wheels) {
-        this.wheels = wheels;
-    }
-
-    public EngineAssembly getEngineAssembly() {
-        return engineAssembly;
-    }
-
-    public void setEngineAssembly(EngineAssembly engineAssembly) {
-        this.engineAssembly = engineAssembly;
-    }
-
-    public Cockpit getCockpit() {
-        return cockpit;
-    }
-
-    public void setCockpit(Cockpit cockpit) {
-        this.cockpit = cockpit;
     }
 
     public Airline getAirline() {
@@ -49,6 +30,38 @@ class Airplane {
         this.airline = airline;
     }
 
+    public Cockpit getCockpit() {
+        return cockpit;
+    }
+
+    public void setCockpit(Cockpit cockpit) {
+        this.cockpit = cockpit;
+    }
+
+    public Wheels getWheels() {
+        return wheels;
+    }
+
+    public void setWheels(Wheels wheels) {
+        this.wheels = wheels;
+    }
+
+    public boolean isLegal() {
+        return isLegal;
+    }
+
+    public void setLegal(boolean legal) {
+        isLegal = legal;
+    }
+
+    public double getNoOfPassengers() {
+        return noOfPassengers;
+    }
+
+    public void setNoOfPassengers(double noOfPassengers) {
+        this.noOfPassengers = noOfPassengers;
+    }
+
     public double getFuelCapacity() {
         return fuelCapacity;
     }
@@ -57,81 +70,37 @@ class Airplane {
         this.fuelCapacity = fuelCapacity;
     }
 
-    public int getCurrentFuelLevel() {
+    public double getCurrentFuelLevel() {
         return currentFuelLevel;
     }
 
-    public void setCurrentFuelLevel(int currentFuelLevel) {
+    public void setCurrentFuelLevel(double currentFuelLevel) {
         this.currentFuelLevel = currentFuelLevel;
     }
 
     @Override
     public String toString() {
         return "Airplane{" +
-                "\nwheels=" + wheels.toString() +
-                ", \nengineAssembly=" + engineAssembly.toString() +
-                ", \ncockpit=" + cockpit.toString() +
-                ", \nairline=" + airline.toString() +
+                "\nairline=" + airline +
+                ", \ncockpit=" + cockpit +
+                ", \nwheels=" + wheels +
+                ", \nisLegal=" + isLegal +
+                ", \nnoOfPassengers=" + noOfPassengers +
                 ", \nfuelCapacity=" + fuelCapacity +
                 ", \ncurrentFuelLevel=" + currentFuelLevel +
                 '}';
     }
 }
 
-class Wheels {
-    private int wheelSize;
-    private boolean isWheelNew;
-    private String brand;
-
-    public Wheels(int wheelSize, boolean isWheelNew, String brand) {
-        this.wheelSize = wheelSize;
-        this.isWheelNew = isWheelNew;
-        this.brand = brand;
-    }
-
-    public int getWheelSize() {
-        return wheelSize;
-    }
-
-    public void setWheelSize(int wheelSize) {
-        this.wheelSize = wheelSize;
-    }
-
-    public boolean isWheelNew() {
-        return isWheelNew;
-    }
-
-    public void setWheelNew(boolean wheelNew) {
-        isWheelNew = wheelNew;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    @Override
-    public String toString() {
-        return "Wheels{" +
-                "wheelSize=" + wheelSize +
-                ", isWheelNew=" + isWheelNew +
-                ", brand='" + brand + '\'' +
-                '}';
-    }
-}
-
 class Airline{
     private String name;
-    private boolean isProfitable;
-    private String homeLocation;
+    private String airlineOrigin;
+    private String airlineDestination;
 
-    public Airline(String name, boolean isProfitable, String homeLocation) {
+    public Airline(String name, String airlineOrigin, String airlineDestination) {
         this.name = name;
-        this.isProfitable = isProfitable;
-        this.homeLocation = homeLocation;
+        this.airlineOrigin = airlineOrigin;
+        this.airlineDestination = airlineDestination;
     }
 
     public String getName() {
@@ -142,107 +111,109 @@ class Airline{
         this.name = name;
     }
 
-    public boolean isProfitable() {
-        return isProfitable;
+    public String getAirlineOrigin() {
+        return airlineOrigin;
     }
 
-    public void setProfitable(boolean profitable) {
-        isProfitable = profitable;
+    public void setAirlineOrigin(String airlineOrigin) {
+        this.airlineOrigin = airlineOrigin;
     }
 
-    public String getHomeLocation() {
-        return homeLocation;
+    public String getAirlineDestination() {
+        return airlineDestination;
     }
 
-    public void setHomeLocation(String homeLocation) {
-        this.homeLocation = homeLocation;
+    public void setAirlineDestination(String airlineDestination) {
+        this.airlineDestination = airlineDestination;
     }
 
     @Override
     public String toString() {
         return "Airline{" +
                 "name='" + name + '\'' +
-                ", isProfitable=" + isProfitable +
-                ", homeLocation='" + homeLocation + '\'' +
+                ", airlineOrigin='" + airlineOrigin + '\'' +
+                ", airlineDestination='" + airlineDestination + '\'' +
                 '}';
     }
 }
 
-class EngineAssembly{
-    private String brand;
-    private int turbineNo;
+class Wheels{
+    private boolean replacedWheels;
+    private String wheelsBrand;
+    private int noOfWheels;
 
-    public EngineAssembly(String brand, int turbineNo) {
-        this.brand = brand;
-        this.turbineNo = turbineNo;
+
+    public Wheels(boolean replacedWheels, String wheelsBrand, int noOfWheels) {
+        this.replacedWheels = replacedWheels;
+        this.wheelsBrand = wheelsBrand;
+        this.noOfWheels = noOfWheels;
     }
 
-    public String getBrand() {
-        return brand;
+    public boolean isReplacedWheels() {
+        return replacedWheels;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setReplacedWheels(boolean replacedWheels) {
+        this.replacedWheels = replacedWheels;
     }
 
-    public int getTurbineNo() {
-        return turbineNo;
+    public String isWheelsBrand() {
+        return wheelsBrand;
     }
 
-    public void setTurbineNo(int turbineNo) {
-        this.turbineNo = turbineNo;
+    public void setWheelsBrand(String wheelsBrand) {
+        this.wheelsBrand = wheelsBrand;
+    }
+
+    public int getNoOfWheels() {
+        return noOfWheels;
+    }
+
+    public void setNoOfWheels(int noOfWheels) {
+        this.noOfWheels = noOfWheels;
     }
 
     @Override
     public String toString() {
-        return "EngineAssembly{" +
-                "brand='" + brand + '\'' +
-                ", turbineNo=" + turbineNo +
+        return "Wheels{" +
+                "replacedWheels=" + replacedWheels +
+                ", wheelsBrand=" + wheelsBrand +
+                ", noOfWheels=" + noOfWheels +
                 '}';
     }
 }
 
 class Cockpit{
-    private String brand;
-    private int yearsUsed;
-    private boolean noLightShown;
+    private int seats;
+    private String cockpitBrand;
 
-    public Cockpit(String brand, int yearsUsed, boolean noLightShown) {
-        this.brand = brand;
-        this.yearsUsed = yearsUsed;
-        this.noLightShown = noLightShown;
+    public Cockpit(int seats, String cockpitBrand) {
+        this.seats = seats;
+        this.cockpitBrand = cockpitBrand;
     }
 
-    public String getBrand() {
-        return brand;
+    public int getSeats() {
+        return seats;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setSeats(int seats) {
+        this.seats = seats;
     }
 
-    public int getYearsUsed() {
-        return yearsUsed;
+    public String getCockpitBrand() {
+        return cockpitBrand;
     }
 
-    public void setYearsUsed(int yearsUsed) {
-        this.yearsUsed = yearsUsed;
-    }
-
-    public boolean isNoLightShown() {
-        return noLightShown;
-    }
-
-    public void setNoLightShown(boolean noLightShown) {
-        this.noLightShown = noLightShown;
+    public void setCockpitBrand(String cockpitBrand) {
+        this.cockpitBrand = cockpitBrand;
     }
 
     @Override
     public String toString() {
         return "Cockpit{" +
-                "brand='" + brand + '\'' +
-                ", yearsUsed=" + yearsUsed +
-                ", noLightShown=" + noLightShown +
+                "seats=" + seats +
+                ", cockpitBrand='" + cockpitBrand + '\'' +
                 '}';
     }
 }
+

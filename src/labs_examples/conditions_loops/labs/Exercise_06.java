@@ -9,14 +9,14 @@ package labs_examples.conditions_loops.labs;
 
 public class Exercise_06 {
     public static void main(String[] args) {
-        int num = 0;
         int sum = 0;
+        int count = 0;
 
-        while (num <= 100){
-            sum += num;
-            num ++;
+        while (count < 100){
+            count++;
+            sum += count;
         }
 
-        System.out.println("The Sum of the numbers is: " + sum);
+        System.out.println("The sum of the numbers is: " + sum);
     }
 }
