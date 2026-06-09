@@ -15,46 +15,41 @@ import java.util.ArrayList;
  *      Then, write the arraylist of objects back out to a new .csv file. Ensure that the resulting csv file is valid.
  *
  */
-class Exercise04 {
-    public static void main(String[] args) {
 
+class Exercise4{
+    public static void main(String[] args) {
         ArrayList<Car> cars = new ArrayList<>();
         String filePath = "src/labs_examples/input_output/labs/cars.csv";
-        String writePath = "src/labs_examples/input_output/labs/cars_write.csv";
+        String writePath = "src/labs_examples/input_output/labs/cars_copy.cvs";
 
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
 
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))){
             String line;
-
-            while ((line = br.readLine()) != null){
+            while ((line = bufferedReader.readLine()) != null){
                 String[] values = line.split(",");
                 cars.add(mapValuesToCarObject(values));
             }
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         for (Car car : cars){
             System.out.println(car.toString());
         }
-
-        //Writing back the objects back to a new CSV file
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(writePath))){
-            bw.write("year,make,carCompany,passenger,price");
-            bw.newLine();
+        //then write back the objects to a new csv file
+        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(writePath))) {
+            bufferedWriter.write("year, make, carCompany, passenger price");
+            bufferedWriter.newLine();
 
             for (Car car : cars){
-                bw.write(car.getYear()+ "," + car.getMake() + "," + car.getCarCompany() + "," +
-                        car.getPassengers() + "," + car.getPrice());
-                bw.newLine();
+                bufferedWriter.write(car.getYear()  + "," + car.getMake() + "," + car.getCarCompany()
+                + "," + car.getPassengers() + "," + car.getPrice());
+                bufferedWriter.newLine();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
-
     }
 
     public static Car mapValuesToCarObject(String[] values){
@@ -69,7 +64,6 @@ class Exercise04 {
         return car;
     }
 }
-
 class Car{
 
     private int year;
@@ -139,4 +133,3 @@ class Car{
                 '}';
     }
 }
-

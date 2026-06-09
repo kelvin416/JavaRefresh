@@ -1,28 +1,28 @@
 package labs_examples.objects_classes_methods.labs.oop.C_blackjack.object_models;
 
+
 import java.util.Scanner;
 
 public class CardPlayer {
 
-    private String name;
+    private String playerName;
     private int stackValue;
 
-    public CardPlayer(){
-        initializeNewUSer();
+    public CardPlayer() {
+        initializeNewUser();
     }
 
-    public CardPlayer(String name, int stackValue) {
-        this.name = name;
+    public CardPlayer(String playerName, int stackValue) {
+        this.playerName = playerName;
         this.stackValue = stackValue;
     }
 
-    private void initializeNewUSer() {
-
+    private void initializeNewUser() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Hello, welcome to black jack. My name is computer, what is your name?");
+        System.out.println("Hello and welcome to BlackJack");
+        this.playerName = scanner.next();
 
-        this.name = scanner.next();
-        System.out.println("Thanks " + this.name+ " for joining. How much money are your placing?");
+        System.out.println("Welcome to the game " + this.playerName + "! How much money are you playing?");
         this.stackValue = scanner.nextInt();
 
     }

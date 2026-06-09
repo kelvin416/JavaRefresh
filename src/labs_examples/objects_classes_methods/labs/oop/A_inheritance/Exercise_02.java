@@ -3,8 +3,7 @@ package labs_examples.objects_classes_methods.labs.oop.A_inheritance;
 /**
  * Run the class below and study the output. What prints and why?
  *
- * Your answer: class B inherits the instance variable and its value from class A, hence the result of object a is the
- * value from class A.
+ * Your answer:
  *
  */
 class A {
